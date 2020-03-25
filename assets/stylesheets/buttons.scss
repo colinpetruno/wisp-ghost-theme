@@ -1,0 +1,249 @@
+@keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.button {
+//  @include outline-reset();
+//  @include prefixed(transform, perspective(1px) translateZ(0));
+//  @include transition($btn-transition);
+
+  border-radius: $button-border-radius;
+  display: inline-block; // needed for transforms
+  font-size: $font-size-base;
+  font-weight: 400;
+  padding: $button-padding;
+  letter-spacing: 1px;
+  vertical-align: middle;
+
+  &:focus {
+    box-shadow: $button-focus-box-shadow;
+  }
+
+  &:hover {
+    animation-name: hvr-pop;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    text-decoration: none;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      animation-name: none;
+      animation-duration: 0;
+      transition: none;
+    }
+
+    &.animate {
+      animation-iteration-count: 1 !important;
+      animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both !important;
+      transition: all !important;
+    }
+  }
+
+  &.small {
+    font-size: $font-size-small;
+    padding: $button-padding-sm;
+    vertical-align: middle;
+  }
+
+
+  &.large {
+    font-size: $font-size-large;
+    padding: $button-padding-lg;
+  }
+
+  &.block {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+// primary link
+.button.primary {
+  background: $button-primary-background;
+  border: 1px solid $button-primary-background;
+  color: $button-primary-color;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:focus { // define focus before active
+    border: 1px solid darken($button-primary-background, 30%);
+  }
+
+  &:active {
+    background: darken($button-primary-background, 10%);
+    border: 1px solid darken($button-primary-background, 10%);
+  }
+
+  &.disabled {
+    background-color: lighten($button-primary-background, 15%);
+    border-color: lighten($button-primary-background, 15%);
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid $button-primary-background;
+    color: $button-primary-background;
+
+    &:focus { // define focus before active
+      // darken the border and text color
+      border: 1px solid darken($button-primary-background, 30%);
+      color: darken($button-primary-background, 5%);
+    }
+
+    &:hover {
+      // fill in the background solid
+      // set color to white since we can't use border color anymore
+      background: $button-primary-background;
+      color: $button-primary-color;
+    }
+
+    &:active {
+      // simply darken the background
+      background: darken($button-primary-background, 10%);
+      color: $button-primary-color;
+    }
+
+    &.disabled {
+      border-color: lighten($button-primary-background, 15%);
+      color: lighten($button-primary-background, 15%);
+
+      &:hover {
+        background: transparent;
+        border-color: lighten($button-primary-background, 15%);
+        color: lighten($button-primary-background, 15%);
+      }
+    }
+  }
+}
+
+
+.button.secondary {
+  background: $button-secondary-background;
+  border: 1px solid $button-secondary-background;
+  color: $button-secondary-color;
+
+  &:focus { // define focus before hover
+    border: 1px solid darken($button-secondary-background, 15%);
+  }
+
+  &:active {
+    background: darken($button-secondary-background, 15%);
+  }
+
+  &.disabled {
+    background: lighten($button-secondary-background, 15%);
+    border: 1px solid lighten($button-secondary-background, 15%);
+    color: lighten($button-secondary-color, 15%);
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid $button-secondary-background;
+    color: $button-secondary-background;
+
+    &:focus { // define focus before hover
+      border: 1px solid darken($button-secondary-background, 15%);
+      color: darken($button-secondary-background, 15%);
+    }
+
+    &:hover {
+      background: $button-secondary-background;
+      color: $button-secondary-color;
+    }
+
+    &:active {
+      background: darken($button-secondary-background, 10%);
+    }
+
+    &.disabled {
+      border: 1px solid lighten($button-secondary-background, 15%);
+      color: lighten($button-secondary-background, 15%);
+
+      &:hover {
+        background: transparent;
+        border: 1px solid lighten($button-secondary-background, 15%);
+        color: lighten($button-secondary-background, 15%);
+      }
+    }
+  }
+}
+
+.button.purple {
+  background: $button-purple-background;
+  border: 1px solid $button-purple-background;
+  color: $button-purple-color;
+
+  &:focus { // define focus before hover
+    border: 1px solid darken($button-purple-background, 15%);
+  }
+
+  &:active {
+    background: darken($button-purple-background, 15%);
+  }
+
+  &.disabled {
+    background: lighten($button-purple-background, 15%);
+    border: 1px solid lighten($button-purple-background, 15%);
+    color: lighten($button-purple-color, 15%);
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid $button-purple-background;
+    color: $button-purple-background;
+
+    &:focus { // define focus before hover
+      border: 1px solid darken($button-purple-background, 15%);
+      color: darken($button-purple-background, 15%);
+    }
+
+    &:hover {
+      background: $button-purple-background;
+      color: $button-purple-color;
+    }
+
+    &:active {
+      background: darken($button-purple-background, 10%);
+    }
+
+    &.disabled {
+      border: 1px solid lighten($button-purple-background, 15%);
+      color: lighten($button-purple-background, 15%);
+
+      &:hover {
+        background: transparent;
+        border: 1px solid lighten($button-purple-background, 15%);
+        color: lighten($button-purple-background, 15%);
+      }
+    }
+  }
+}

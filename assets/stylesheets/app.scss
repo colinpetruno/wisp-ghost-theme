@@ -1,0 +1,82 @@
+@import "bourbon";
+@import "neat";
+
+@mixin outline-reset() {
+  outline: none;
+  outline-style: none;
+  outline: 0;
+
+  &:active, &:hover, &:focus, &:visited {
+    outline-color: transparent;
+    outline: none;
+    outline-style: none;
+    box-shadow: none;
+  }
+}
+
+@import "variables";
+@import "buttons";
+@import "header";
+@import "post_listings";
+@import "post";
+@import "footer";
+@import "pagination";
+@import "production_rails";
+@import "editor_cards";
+
+html, body {
+  background-color: $white;
+  color: $font-color;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  font-family: $paragraph-font-family;
+  font-size: 12pt;
+  min-height: 100%;
+  max-width: 100%;
+
+  > footer {
+    margin-top: auto;
+  }
+}
+
+h1,h2,h3 {
+  font-family: $heading-font-family;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.kg-image-card {
+  // Post image figure
+}
+
+.kg-width-wide {
+  // Wide post figure
+}
+
+.kg-width-full {
+  // Full width post figure
+}
+
+.kg-image {
+  // Post image
+}
+
+.kg-embed-card {
+  // Post embeded iframe content
+}
+
+.kg-gallery-container {
+  // Post gallery container
+}
+
+.kg-gallery-row {
+  // Post gallery row
+}
+
+.kg-gallery-image {
+  // Post gallery image
+}
+

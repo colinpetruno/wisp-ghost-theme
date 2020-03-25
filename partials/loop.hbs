@@ -1,0 +1,27 @@
+<ul>
+  {{#foreach posts}}
+    <li class="{{post_class}}">
+      <header>
+        <h2>
+          <a href="{{url}}">{{{title}}}</a>
+        </h2>
+        <time datetime="{{date format='YYYY-MM-DD'}}">
+          {{date format="DD MMMM YYYY"}}
+        </time>
+        <span class="tags">
+          {{tags prefix=(t " in ")}}
+        </span>
+      </header>
+      <section>
+        <p>
+          {{excerpt words="50"}}
+        </p>
+        <a href="{{url}}">Continue reading »</a>
+      </section>
+    </li>
+  {{/foreach}}
+</ul>
+
+<div class="pagination">
+  {{pagination}}
+</div>

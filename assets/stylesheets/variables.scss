@@ -1,0 +1,61 @@
+$blue-gradient: linear-gradient(45deg, #2571f5 0%, #369bf4 100%);
+$purple-gradient: linear-gradient(45deg, #5a00c8 0%, #b675d6 100%);
+$salmon-gradient:linear-gradient(45deg, #f1766d 0%, #fca37d 100%);
+
+$blue: #4e77e7;
+$purple: #914dcc;
+$pink: #fc6371;
+$salmon: #f9997e;
+$white: #ffffff;
+$gray-light: #eaf5f8;
+$gray: #747881;
+$gray-dark: #2c3242;
+$green: #77d671;
+
+// common
+$box-shadow: 0 3px 5px darken($gray-light, 5%);
+
+$heading-font-family: 'Noto Serif', serif;
+$paragraph-font-family: 'Muli', "Helvetica Neue", Arial, sans-serif;
+
+$font-color: darken($gray, 10%);
+
+$header-color: $white;
+$site-max-width: 1280px;
+
+$font-size-base-px: 16px;
+$font-size-small: 0.8rem;
+$font-size-base: 1rem;
+$font-size-large: 1.2rem;
+$font-size-heading: 1.7rem;
+$font-size-main-heading: 2.5rem;
+
+// spacing
+$spacing-sm: 5px;
+$spacing-md: 15px;
+$spacing-lg: 30px;
+$spacing-section: 50px;
+
+//buttons
+$button-border-radius: 3px;
+$button-transition: all;
+$button-focus-box-shadow: 0 3px 5px darken($gray-light, 5%);
+
+$button-padding-lg: $spacing-md $spacing-lg;
+$button-padding: 10px $spacing-md;
+$button-padding-sm: 5px $spacing-sm 3px $spacing-sm;
+
+$button-primary-background: $pink; // $purple-gradient;
+$button-primary-color: $white;
+
+$button-secondary-background: $blue;
+$button-secondary-color: $white;
+
+$button-tertiary-background: $pink; // outline until hover
+$button-tertiary-color: $white; // only for hover
+
+$button-purple-background: $purple; // outline until hover
+$button-purple-color: $white; // only for hover
+
+$button-link-background: $white; // only for hover
+$button-link-color: $gray-dark;

@@ -1,0 +1,96 @@
+section.production-rails-blog {
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  > article {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: $site-max-width;
+  }
+
+  .tile {
+    display: flex;
+
+    > aside.content {
+      display: flex;
+      flex-direction: column;
+      background-color: $gray-light;
+      min-height: 300px;
+      flex-grow: 1;
+      padding: 50px;
+      position: relative;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+
+      h2 {
+        color: $pink;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        max-width: 450px;
+      }
+
+      button {
+        display: inline-block;
+        margin-top: auto;
+      }
+
+      &:after {
+        background-color: $gray-light;
+        content: " ";
+        position: absolute;
+        right: -200px;
+        top: 0;
+        bottom: 0;
+        min-width: 200px;
+        min-height: 100%;
+        z-index: 1;
+      }
+    }
+
+    > div.image {
+      display: flex;
+      min-height: 100%;
+      z-index: 10;
+
+      > div {
+        background: url('https://www.colinpetruno.com/public/assets/images/construction_005.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: -50px 0;
+        width: 560px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+
+    .tile {
+      margin-left: 15px;
+      margin-right: 15px;
+      flex-direction: column-reverse;
+
+      > div.image {
+        min-height: 100px;
+        > div {
+          margin-left: 5px;
+          margin-bottom: -95px;
+        }
+      }
+
+      > aside.content {
+        border-radius: 20px;
+        padding-top: 100px;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

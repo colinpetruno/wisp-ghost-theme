@@ -1,0 +1,16 @@
+div.pagination {
+  margin-top: 75px;
+  display: flex;
+
+  > nav.pagination {
+    margin: 0 auto;
+  }
+
+  .older-posts {
+    margin-left: 15px;
+  }
+
+  .newer-posts {
+    margin-right: 15px;
+  }
+}
